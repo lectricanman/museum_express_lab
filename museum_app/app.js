@@ -4,8 +4,8 @@ let app = express();
 let bodyParser = require('body-parser');
 let logger = require('morgan');
 
-let artists = require('./routes/artists.js');
-let paintings = require('./routes/paintings.js');
+let artists = require('./routes/artist_controller.js');
+let paintings = require('./routes/painting_controller.js');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());

@@ -1,7 +1,7 @@
 'use strict';
 let express = require('express');
 let router = express.Router();
-let Artist = require('../models/artist');
+let Artist = require('../models/artists');
 
 router.route('/')
   .get((req, res, next) => {

@@ -7,7 +7,7 @@ var artistSchema = new Schema ({
   nationality: String,
   birthYear: Date,
   description: String,
-  Painting: []
+  paintings: []
 });
 
 var Artist = mongoose.model('Artist', artistSchema);
