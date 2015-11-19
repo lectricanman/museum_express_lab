@@ -23,6 +23,7 @@ db.once('open', (callback) => {
 
 app.use('/paintings', paintings);
 app.use('/artists', artists);
+app.use('/', artists);
 
 
 let server = app.listen(3000, () => {
