@@ -1,10 +1,8 @@
 'use strict';
 let express = require('express');
 let app = express();
-let server  = require('http').createServer(app);
 let bodyParser = require('body-parser');
-let morgan = require('morgan');
-let mongoose = require('mongoose');
+let logger = require('morgan');
 
 let artists = require('./routes/artists.js');
 let paintings = require('./routes/paintings.js');
@@ -31,7 +29,7 @@ let server = app.listen(3000, () => {
   let host = server.address().address;
   let port = server.address().port;
 
-  console.log('express running', host, port);  
+  console.log('express running', host, port);
 });
 // app.use(bodyPArser.urlencoded({ extended: true }));
 // app.use(bodyParser.json());
