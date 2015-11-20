@@ -60,13 +60,12 @@ router.route('/')
       });
     })
 
-    .delete((req, res) =>{
+    .delete((req, res) => {
       console.log('hit delete /artists/:id');
-      let artyParams = req.body.params;
-      Artist.remove({_id: req.body.id}, true, (err, artist_data) =>{
-        if (err) throw err;
-        console.log(artist_data);
-        res.send(artist_data);
+      Artist.remove({_id: req.params.id}, true, (err, artist_data) =>{
+        if (err)
+        console.log(err);
+        res.send(err);
       });
     });
 
