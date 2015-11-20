@@ -27,7 +27,12 @@
 
   <div class="form-div"></div>
 
-  <template id="painting-template">
+  <template id="painting-template" type = "text/x-handlebars-template">
+    <ul>
+      {{#each painting-template}}
+      <h3>{{this.title}}</h3><br>
+      {{/each}}
+    </ul>
   </template>
 
   <template id="artist-template">
