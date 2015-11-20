@@ -13,7 +13,7 @@ router.route('/')
   });
 
 /* creates a painting object */
-router.route('/create')
+router.route('/paintings/create')
   .post((req, res) => {
     let newPainting = new Painting ({
       title: req.body.title,
@@ -25,9 +25,11 @@ router.route('/create')
   });
 
 /* destroys a painting object */
-router.route('/destroy')
-Painting.findOneAndRemove({ title: req.body.title })
-  .remove((err, user) => {
+router.route('/paintings/:id')
+  .delete((err, user) => {
+    let deletePainting = Painting.findOneAndRemove({
+      _id: req.params.id
+    });
   if (err) {
     console.log(err);
   } else {
